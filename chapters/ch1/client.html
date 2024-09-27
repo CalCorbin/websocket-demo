@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="http://bit.ly/cdn-bootstrap-theme">
     <script src="http://bit.ly/cdn-bootstrap-jq"></script>
     <script>
+        // Create a new WebSocket object
         var ws = new WebSocket("ws://localhost:8181");
+
+        // On open event, log a message to the websocket server console
         ws.onopen = function(e) {
             console.log('Connection to server opened');
         }
 
+        // On message event, log the message to the server console
         function sendMessage() {
             ws.send($('#message').val());
         }
